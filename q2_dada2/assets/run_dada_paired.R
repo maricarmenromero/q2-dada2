@@ -206,7 +206,7 @@ for(j in seq(length(filtsF))) {
   ddF <- dada(drpF, err=errF, multithread=multithread, verbose=FALSE)
   drpR <- derepFastq(filtsR[[j]])
   ddR <- dada(drpR, err=errR, multithread=multithread, verbose=FALSE)
-  mergers[[j]] <- mergePairs(ddF, drpF, ddR, drpR)
+  mergers[[j]] <- mergePairs(ddF, drpF, ddR, drpR, justConcatenate=TRUE)
   denoisedF[[j]] <- getN(ddF)
   cat(".")
 }
